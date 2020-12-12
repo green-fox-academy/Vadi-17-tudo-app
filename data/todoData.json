@@ -1,17 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Kutyát sétáltatni",
-    "done": false
-  },
-  {
-    "id": 2,
-    "name": "Tejet venni",
+    "name": "valami",
     "done": true
-  },
-  {
-    "id": 3,
-    "name": "dsfdsf ds df",
-    "done": false
   }
 ]
