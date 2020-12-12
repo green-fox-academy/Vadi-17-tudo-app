@@ -18,5 +18,50 @@
     "id": 4,
     "name": "Megetetni a papagájt",
     "done": false
+  },
+  {
+    "id": 5,
+    "name": true,
+    "done": false
+  },
+  {
+    "id": 6,
+    "name": true,
+    "done": false
+  },
+  {
+    "id": 7,
+    "name": true,
+    "done": false
+  },
+  {
+    "id": 8,
+    "name": "teszt",
+    "done": false
+  },
+  {
+    "id": 9,
+    "name": "teszt",
+    "done": false
+  },
+  {
+    "id": 10,
+    "name": true,
+    "done": false
+  },
+  {
+    "id": 11,
+    "name": 56,
+    "done": false
+  },
+  {
+    "id": 12,
+    "name": "Elefánt sétáltatás",
+    "done": false
+  },
+  {
+    "id": 13,
+    "name": 42,
+    "done": false
   }
 ]

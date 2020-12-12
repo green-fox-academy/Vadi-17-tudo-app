@@ -17,7 +17,7 @@ try {
 
     //Main menu
     if (args.l) {
-               printToDoList(todoList);
+        printToDoList(todoList);
     } else if (args.a) {
         addNewElement(args.a)
     } else if (args.r) {
@@ -45,19 +45,23 @@ function printUserManual() {
 };
 
 function printToDoList(todoList) {
-       let nothingTodo = true
+    let nothingTodo = true
     for (let i = 0; i < todoList.length; i++) {
-        nothingTodo = todoList[i].done && nothingTodo ?  true : false ;
+        nothingTodo = todoList[i].done && nothingTodo ? true : false;
         console.log(`  ${todoList[i].id} - [${todoList[i].done ? "x" : " "}] ${todoList[i].name}`);
     }
-    if (nothingTodo){
+    if (nothingTodo) {
         console.log("Nincs mára tennivalód! :)");
     }
 }
 
 function addNewElement(newElement) {
-    todoList.push({id: todoList.length + 1 ,name:newElement,done: false})
-    fs.writeFileSync(fileName, JSON.stringify(todoList, null,2));
+    if (typeof newElement !== "boolean") {
+        todoList.push({ id: todoList.length + 1, name: newElement, done: false })
+        fs.writeFileSync(fileName, JSON.stringify(todoList, null, 2));
+    } else {
+        console.log("Nem lehetséges új feladat hozzáadása: nincs megadva a feladat!");
+    }
 }
 
 function removeElement(removeElement) {
