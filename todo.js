@@ -21,7 +21,7 @@ try {
     } else if (args.a) {
         addNewElement(args.a)
     } else if (args.r) {
-        removeElement(args.r)
+        removeElement(args.r,todoList)
     } else if (args.c) {
         completeElement(args.c)
     } else {
@@ -56,17 +56,35 @@ function printToDoList(todoList) {
 }
 
 function addNewElement(newElement) {
-    if (typeof newElement !== "boolean") {
+    if (typeof newElement === "boolean") {
+        console.log("Nem lehetséges új feladat hozzáadása: nincs megadva a feladat!");
+    } else {
         todoList.push({ id: todoList.length + 1, name: newElement, done: false })
         fs.writeFileSync(fileName, JSON.stringify(todoList, null, 2));
-    } else {
-        console.log("Nem lehetséges új feladat hozzáadása: nincs megadva a feladat!");
     }
 }
 
-function removeElement(removeElement){
-    todoList.splice((removeElement - 1), 1);
-    fs.writeFileSync(fileName, JSON.stringify(todoList, null,2));
+function removeElement(removeElement,todoList){
+    console.log(typeof removeElement);
+    console.log(removeElement);
+    if (typeof removeElement === "boolean"){
+        console.log("Nem lehetséges az eltávolítás: nem adott meg indexet!");
+    }else if (typeof removeElement !== "number"){
+        console.log("Nem lehetséges az eltávolítás: a megadott index nem szám!");
+    }else if(todoList.length <= 0){
+        console.log("A tudu lista nem tartalmaz elemet, nincs mit törölni!");
+    }else if(todoList.length < removeElement){
+        console.log("Nem lehetséges az eltávolítás: túlindexelési probléma adódott!");
+    }else{
+        todoList.splice((removeElement - 1), 1);
+        //reindex
+        for (let i = 0; i < todoList.length; i++) {
+            todoList[i].id = i+1
+        }
+        //writing
+        fs.writeFileSync(fileName, JSON.stringify(todoList, null,2));
+
+    }
 };
 
 function completeElement(complElement) {

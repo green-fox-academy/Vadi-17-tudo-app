@@ -2,46 +2,21 @@
   {
     "id": 1,
     "name": "Kutyát sétáltatni",
-    "done": true
+    "done": false
   },
   {
     "id": 2,
     "name": "Tejet venni",
-    "done": false
-  },
-  {
-    "id": 3,
-    "name": "Megcsinálni a leckét",
     "done": true
   },
   {
+    "id": 3,
+    "name": "dsfdsf ds df",
+    "done": false
+  },
+  {
     "id": 4,
-    "name": "Megetetni a papagájt",
-    "done": false
-  },
-  {
-    "id": 5,
-    "name": true,
-    "done": false
-  },
-  {
-    "id": 6,
-    "name": true,
-    "done": false
-  },
-  {
-    "id": 7,
-    "name": true,
-    "done": false
-  },
-  {
-    "id": 8,
-    "name": "teszt",
-    "done": false
-  },
-  {
-    "id": 9,
-    "name": "teszt",
+    "name": "32432 342 432l 32él ",
     "done": false
   }
 ]
