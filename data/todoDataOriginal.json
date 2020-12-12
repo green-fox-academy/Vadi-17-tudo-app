@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Kutyát sétáltatni",
+        "done": false
+    },
+    {
+        "id": 2,
+        "name": "Tejet venni",
+        "done": true
+    },
+    {
+        "id": 3,
+        "name": "Megcsinálni a leckét",
+        "done": false
+    }
+]
