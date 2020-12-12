@@ -3,7 +3,7 @@ import fs from 'fs';
 import minimist from 'minimist';
 
 const args = minimist(process.argv);
-let fileName = "data/todoData.json"
+const fileName = "data/todoData.json"
 let todoList = [];
 
 try {
@@ -20,7 +20,7 @@ try {
     if (args.l) {
         printToDoList(todoList);
     } else if (args.a) {
-        addNewElement(args.a)
+        addNewElement(args.a, todoList)
     } else if (args.r) {
         removeElement(args.r, todoList)
     } else if (args.c) {
@@ -35,6 +35,7 @@ try {
     console.error(err);
 }
 
+///////////////////////////////////////////
 
 function printToDoList(todoList) {
     let nothingTodo = true
@@ -48,7 +49,7 @@ function printToDoList(todoList) {
 }
 
 
-function addNewElement(newElement) {
+function addNewElement(newElement, todoList) {
     if (typeof newElement === "boolean") {
         console.log("Nem lehetséges új feladat hozzáadása: nincs megadva a feladat!");
     } else {
@@ -66,7 +67,6 @@ function removeElement(removeElement, todoList) {
         for (let i = 0; i < todoList.length; i++) {
             todoList[i].id = i + 1
         }
-        //writing
         fs.writeFileSync(fileName, JSON.stringify(todoList, null, 2));
     }
 };
