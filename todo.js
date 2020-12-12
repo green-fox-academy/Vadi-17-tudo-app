@@ -24,6 +24,9 @@ try {
         removeElement(args.r,todoList)
     } else if (args.c) {
         completeElement(args.c)
+    } else if (Object.keys(args).length > 0) {
+        console.log("Nem támogatott argumentum!");
+        printUserManual()
     } else {
         printUserManual()
     }
@@ -65,8 +68,6 @@ function addNewElement(newElement) {
 }
 
 function removeElement(removeElement,todoList){
-    console.log(typeof removeElement);
-    console.log(removeElement);
     if (typeof removeElement === "boolean"){
         console.log("Nem lehetséges az eltávolítás: nem adott meg indexet!");
     }else if (typeof removeElement !== "number"){
