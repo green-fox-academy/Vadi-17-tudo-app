@@ -2,16 +2,16 @@
     {
         "id": 1,
         "name": "Kutyát sétáltatni",
-        "done": false
+        "done": true
     },
     {
         "id": 2,
         "name": "Tejet venni",
-        "done": true
+        "done": false
     },
     {
         "id": 3,
         "name": "Megcsinálni a leckét",
-        "done": false
+        "done": true
     }
 ]

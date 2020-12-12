@@ -16,15 +16,15 @@ try {
     }
 
     //Main menu
-    if (args.l){
-        printToDoList(todoList);
-    }else if(args.a){
-        addNewElement(args.a)    
-    }else if(args.r){
+    if (args.l) {
+               printToDoList(todoList);
+    } else if (args.a) {
+        addNewElement(args.a)
+    } else if (args.r) {
         removeElement(args.r)
-    }else if(args.c){
+    } else if (args.c) {
         completeElement(args.c)
-    }else{
+    } else {
         printUserManual()
     }
 } catch (err) {
@@ -45,16 +45,21 @@ function printUserManual() {
 };
 
 function printToDoList(todoList) {
+       let nothingTodo = true
     for (let i = 0; i < todoList.length; i++) {
-         console.log(`  ${todoList[i].id} - [${todoList[i].done ? "x" : " "}] ${todoList[i].name}`);
+        nothingTodo = todoList[i].done && nothingTodo ?  true : false ;
+        console.log(`  ${todoList[i].id} - [${todoList[i].done ? "x" : " "}] ${todoList[i].name}`);
+    }
+    if (nothingTodo){
+        console.log("Nincs mára tennivalód! :)");
     }
 }
 
-function addNewElement(newElement){
+function addNewElement(newElement) {
 }
 
-function removeElement(removeElement){
+function removeElement(removeElement) {
 };
 
-function completeElement(complElement){
+function completeElement(complElement) {
 };
