@@ -56,6 +56,8 @@ function printToDoList(todoList) {
 }
 
 function addNewElement(newElement) {
+    todoList.push({id: todoList.length + 1 ,name:newElement,done: false})
+    fs.writeFileSync(fileName, JSON.stringify(todoList, null,2));
 }
 
 function removeElement(removeElement) {
