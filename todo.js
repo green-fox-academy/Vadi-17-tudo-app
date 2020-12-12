@@ -36,19 +36,6 @@ try {
 }
 
 
-function printUserManual() {
-    const forPrint = [
-        "Parancssori Todo applikáció",
-        "=============================",
-        "  ",
-        "-l   Kilistázza a feladatokat (list)",
-        "-a   Új feladatot ad hozzá (add)",
-        "-r   Eltávolít egy feladatot (remove)",
-        "-c   Teljesít egy feladatot (complete)"]
-    forPrint.forEach(element => console.log(element));
-};
-
-
 function printToDoList(todoList) {
     let nothingTodo = true
     for (let i = 0; i < todoList.length; i++) {
@@ -107,4 +94,17 @@ function checkIndex(indexNumber, errorText, todoList) {
         return true
     }
     return false
+};
+
+
+function printUserManual() {
+    const forPrint = [
+        "Parancssori Todo applikáció",
+        "=============================",
+        "  ",
+        "-l   Kilistázza a feladatokat (list)",
+        "-a   Új feladatot ad hozzá (add)",
+        "-r   Eltávolít egy feladatot (remove)",
+        "-c   Teljesít egy feladatot (complete)"]
+    forPrint.forEach(element => console.log(element));
 };
