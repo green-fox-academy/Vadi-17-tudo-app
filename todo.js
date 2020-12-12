@@ -7,15 +7,13 @@ const fileName = "data/todoData.json"
 let todoList = [];
 
 try {
-
     //Read data from todoData.json
     if (fs.existsSync(fileName)) {
         todoList = JSON.parse(fs.readFileSync(fileName, 'utf8'));
     } else {
-        console.log("Létre lett hozva, az eddig nem létező adat file")
+        console.log("Létre lett hozva, az eddig nem létező adat file!")
         fs.writeFileSync(fileName, '[]');
     }
-
     //Main menu
     if (args.l) {
         printToDoList(todoList);
@@ -35,7 +33,7 @@ try {
     console.error(err);
 }
 
-///////////////////////////////////////////
+//  ---------  FUNCTIONS  ---------  
 
 function printToDoList(todoList) {
     let nothingTodo = true
@@ -48,7 +46,6 @@ function printToDoList(todoList) {
     }
 }
 
-
 function addNewElement(newElement, todoList) {
     if (typeof newElement === "boolean") {
         console.log("Nem lehetséges új feladat hozzáadása: nincs megadva a feladat!");
@@ -58,10 +55,9 @@ function addNewElement(newElement, todoList) {
     }
 }
 
-
 function removeElement(removeElement, todoList) {
-    let errorText = "eltávolítás";
-    if (checkIndex(removeElement, errorText, todoList)) {
+    let errorVariableText = "eltávolítás";
+    if (checkIndex(removeElement, errorVariableText, todoList)) {
         todoList.splice((removeElement - 1), 1);
         //reindex
         for (let i = 0; i < todoList.length; i++) {
@@ -71,31 +67,28 @@ function removeElement(removeElement, todoList) {
     }
 };
 
-
 function completeElement(complElement, todoList) {
-    let errorText = "elvégzettre állítás";
-    if (checkIndex(complElement, errorText, todoList)) {
+    let errorVariableText = "elvégzettre állítás";
+    if (checkIndex(complElement, errorVariableText, todoList)) {
         todoList[complElement - 1].done = true
         fs.writeFileSync(fileName, JSON.stringify(todoList, null, 2));
     }
 };
 
-
-function checkIndex(indexNumber, errorText, todoList) {
+function checkIndex(indexNumber, errorVariableText, todoList) {
     if (typeof indexNumber === "boolean") {
-        console.log(` Nem lehetséges az ${errorText}: nem adott meg indexet!`);
+        console.log(` Nem lehetséges az ${errorVariableText}: nem adott meg indexet!`);
     } else if (typeof indexNumber !== "number") {
-        console.log(`Nem lehetséges az ${errorText}: a megadott index nem szám!`);
-    } else if (todoList.length <= 0) {
-        console.log(`A tudu lista nem tartalmaz elemet, nincs lehetőség ${errorText}ra!`);
+        console.log(`Nem lehetséges az ${errorVariableText}: a megadott index nem szám!`);
+    } else if (todoList.length === 0) {
+        console.log(`A tudu lista nem tartalmaz elemet, nincs lehetőség ${errorVariableText}ra!`);
     } else if (todoList.length < indexNumber) {
-        console.log(`Nem lehetséges az ${errorText}: túlindexelési probléma adódott!`);
+        console.log(`Nem lehetséges az ${errorVariableText}: túlindexelési probléma adódott!`);
     } else {
         return true
     }
     return false
 };
-
 
 function printUserManual() {
     const forPrint = [
