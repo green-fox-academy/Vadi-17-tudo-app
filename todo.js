@@ -64,7 +64,9 @@ function addNewElement(newElement) {
     }
 }
 
-function removeElement(removeElement) {
+function removeElement(removeElement){
+    todoList.splice((removeElement - 1), 1);
+    fs.writeFileSync(fileName, JSON.stringify(todoList, null,2));
 };
 
 function completeElement(complElement) {

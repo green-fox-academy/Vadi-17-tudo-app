@@ -43,25 +43,5 @@
     "id": 9,
     "name": "teszt",
     "done": false
-  },
-  {
-    "id": 10,
-    "name": true,
-    "done": false
-  },
-  {
-    "id": 11,
-    "name": 56,
-    "done": false
-  },
-  {
-    "id": 12,
-    "name": "Elefánt sétáltatás",
-    "done": false
-  },
-  {
-    "id": 13,
-    "name": 42,
-    "done": false
   }
 ]
