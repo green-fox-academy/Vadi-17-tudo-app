@@ -45,6 +45,9 @@ function printUserManual() {
 };
 
 function printToDoList(todoList) {
+    for (let i = 0; i < todoList.length; i++) {
+         console.log(`  ${todoList[i].id} - [${todoList[i].done ? "x" : " "}] ${todoList[i].name}`);
+    }
 }
 
 function addNewElement(newElement){
